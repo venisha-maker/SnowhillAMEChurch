@@ -1,84 +1,142 @@
-/* ================================
-   Global Styling
-================================ */
+/* =========================================
+   Global Page Styling
+========================================= */
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f7f5f2; /* Soft, warm neutral */
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f7f5f2; /* Warm neutral */
     color: #333;
+    line-height: 1.6;
 }
 
-header, nav, footer {
+/* =========================================
+   Header
+========================================= */
+header {
+    background: #3a4a3f; /* Deep green for a peaceful church tone */
+    color: white;
     text-align: center;
-    padding: 20px;
-    background: #3a4a3f; /* Deep green for a peaceful, faith-based tone */
-    color: #ffffff;
+    padding: 40px 20px;
 }
 
-/* Navigation */
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   Navigation
+========================================= */
+nav {
+    background: #506556; /* Softer green */
+    text-align: center;
+    padding: 15px;
 }
 
 nav a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
-    padding: 8px 15px;
+    margin: 0 12px;
+    font-weight: bold;
+    padding: 8px 12px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #506556; /* Softer green hover */
+    background-color: #3a4a3f;
 }
 
-/* ================================
-   Blog / Ministries Layout
-================================ */
-.blog-container {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+/* =========================================
+   Main Content Sections
+========================================= */
+main {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
-.blog-post {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 45%;
-    min-width: 280px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-top: 5px solid #8c9e8f; /* Accent color for ministry cards */
-}
-
-/* ================================
-   Contact Form
-================================ */
-.contact-section {
-    padding: 20px;
-    background: #ffffff;
-    margin: 20px;
+section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.08);
 }
 
+section h2 {
+    color: #3a4a3f;
+    margin-top: 0;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #8c9e8f;
+    padding-bottom: 8px;
+}
+
+/* =========================================
+   Table Styling (Ministries)
+========================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #3a4a3f;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    background:#e8ede9;
+    color: #333;
+    text-align: center;
+}
+
+tfoot td {
+    text-align: center;
+    font-style: italic;
+    padding: 15px;
+}
+
+/* =========================================
+   Images (Pastor & Fellowship)
+========================================= */
+section img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================
+   Contact Form
+========================================= */
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
+.form-group label {
+    font-weight: bold;
+    color: #3a4a3f;
+}
+
 input, textarea {
-    padding: 10px;
+    padding: 12px;
     border: 2px solid #c9c9c9;
     border-radius: 5px;
+    font-size: 1rem;
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
@@ -88,58 +146,48 @@ input:hover, textarea:hover {
     background-color: #f0f0f0;
 }
 
-button {
-    padding: 12px;
+.submit-btn {
     background: #3a4a3f;
     color: white;
+    padding: 12px;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.submit-btn:hover {
     background: #506556;
 }
 
-/* ================================
-   Fade-in Animation
-================================ */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* =========================================
+   Footer
+========================================= */
+footer {
+    background: #3a4a3f;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* ================================
-   Media Queries
-================================ */
-
-/* Phones */
-@media (max-width: 767px) {
-    .blog-container {
-        flex-direction: column;
-        align-items: center;
+/* =========================================
+   Responsive Design
+========================================= */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
     }
 
-    .blog-post {
-        width: 90%;
+    nav a {
+        display: inline-block;
+        margin: 8px;
     }
-}
 
-/* Tablets */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .blog-post {
-        width: 45%;
-    }
-}
-
-/* Desktops */
-@media (min-width: 1025px) {
-    .blog-post {
-        width: 40%;
+    section {
+        padding: 20px;
     }
 }
